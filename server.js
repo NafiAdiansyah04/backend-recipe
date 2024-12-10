@@ -15,8 +15,9 @@ app.use(express.json());
 
 app.use('/api/recipes', recipeRoutes);
 
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT,()=>{
-    console.log(`Server is running on port ${PORT}`);
+// Route default
+app.get('/', (req, res) => {
+  res.send('Recipe API is running...');
 });
+
+module.exports = app;
